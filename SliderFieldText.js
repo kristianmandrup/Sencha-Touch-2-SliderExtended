@@ -1,14 +1,13 @@
-
-Ext.define('Ext.field.SliderExtended', {
+Ext.define('Ext.field.SliderText', {
   extend  : 'Ext.field.Field',
-  xtype   : 'sliderfieldextended',
+  xtype   : 'sliderfieldtext',
   requires: [
     'Ext.slider.Slider'
   ],
-  alternateClassName: 'Ext.form.SliderExtended',
+  alternateClassName: 'Ext.form.SliderText',
 
   config: {
-    cls: Ext.baseCSSPrefix + 'slider-field-extended',
+    cls: Ext.baseCSSPrefix + 'slider-field-text',
     tabIndex: -1,
     helperPosition: 'right'
   },
@@ -53,8 +52,7 @@ Ext.define('Ext.field.SliderExtended', {
       children: [
       {
         reference: 'helperInput',
-        tag: 'input',
-        type: 'number',
+        tag: 'div',
         cls: Ext.baseCSSPrefix + 'slider-helper-input'
       }
       ]
@@ -66,32 +64,13 @@ Ext.define('Ext.field.SliderExtended', {
   setHelperValue: function(value) {
     var valueMapper = self.config.valueMapper;
     var value = valueMapper ? valueMapper(value) : value;
-    this.helperInput.dom.value = value;
+    this.helperInput.dom.text = value;
   },
   
   // @private
   applyComponent: function(config) {
     var self = this;
     self.helper.setStyle('float', self.config.helperPosition);
-    var changeValue = function(e) {
-      var keycode = e.which || window.event.keyCode;
-      if( [8, 9, 13, 37, 38, 39, 40, 46].indexOf(Number(keycode)) !== -1 ) return true;
-      var helperInputValue = Number(self.helperInput.getValue());
-      if(helperInputValue < self.config.minValue || isNaN(helperInputValue))
-      helperInputValue = self.config.minValue;
-      else if(helperInputValue > self.config.maxValue)
-      helperInputValue = self.config.maxValue;
-      this.value = helperInputValue;
-      self.setValue(helperInputValue);
-    };
-    self.helperInput.dom.onkeydown = function(e) {
-      var keycode = e.which || window.event.keyCode;
-      if( [8, 9, 13, 37, 38, 39, 40, 46, 190].indexOf(Number(keycode)) !== -1 ) return true;
-      if( keycode > 57 || keycode < 48 ) return false;
-    };
-    self.helperInput.dom.onchange = changeValue;
-    self.helperInput.dom.onclick = changeValue;
-    self.helperInput.dom.onkeyup = changeValue;
     self.setHelperValue(self.config.value);
     return Ext.factory(config, Ext.slider.Slider);
   },

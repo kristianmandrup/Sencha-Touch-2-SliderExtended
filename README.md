@@ -12,7 +12,7 @@ This is an extended version of the Sencha Touch 2 Slider field with added helper
 # Example Usage
 
       {
-        xtype: 'sliderfieldextended',
+        xtype: 'sliderfieldinput',
         name: 'slider_decimal',
         labelText: 'Decimal',
         label: 'Decimal',
@@ -25,7 +25,7 @@ This is an extended version of the Sencha Touch 2 Slider field with added helper
 ## Using a custom valueMapper
 
       {
-        xtype: 'sliderfieldextended',
+        xtype: 'sliderfieldtext',
         name: 'slider_decimal',
         labelText: 'Decimal',
         label: 'Decimal',
@@ -35,7 +35,7 @@ This is an extended version of the Sencha Touch 2 Slider field with added helper
         increment: 1,
         valueMapper: function(value) {
           self.config.valueMap[value];
-        }
+        },
         valueMap: ['A', 'B', 'C']
       }
 

@@ -13,7 +13,7 @@ Ext.setup({
           title: 'Standard Slider Input',
           items : [
             {
-              xtype: 'sliderfieldextended',
+              xtype: 'sliderfieldinput',
               name: 'slider_decimal',
               labelText: 'Decimal',
               label: 'Decimal',
@@ -23,7 +23,7 @@ Ext.setup({
               increment: 0.25
             },
             {
-              xtype: 'sliderfieldextended',
+              xtype: 'sliderfieldinput',
               name: 'slider_integer',
               labelText: 'Integer',
               label: 'Integer',
@@ -38,7 +38,7 @@ Ext.setup({
           title: 'Top Aligned Labels',
           items : [
             {
-              xtype: 'sliderfieldextended',
+              xtype: 'sliderfieldinput',
               name: 'slider_decimal',
               labelAlign: 'top',
               labelText: 'Slider (Decimal)',
@@ -49,7 +49,7 @@ Ext.setup({
               increment: 0.25
             },
             {
-              xtype: 'sliderfieldextended',
+              xtype: 'sliderfieldinput',
               name: 'slider_integer',
               labelAlign: 'top',
               labelText: 'Slider (Integer)',
@@ -68,7 +68,7 @@ Ext.setup({
           },
           items : [
             {
-              xtype: 'sliderfieldextended',
+              xtype: 'sliderfieldinput',
               name: 'slider_decimal',
               labelAlign: 'top',
               labelText: 'Slider (Decimal)',
@@ -79,7 +79,7 @@ Ext.setup({
               increment: 0.25
             },
             {
-              xtype: 'sliderfieldextended',
+              xtype: 'sliderfieldinput',
               name: 'slider_integer',
               labelAlign: 'top',
               labelText: 'Slider (Integer)',
