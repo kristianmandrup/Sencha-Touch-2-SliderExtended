@@ -39,6 +39,19 @@ This is an extended version of the Sencha Touch 2 Slider field with added helper
         valueMap: ['A', 'B', 'C']
       }
 
+## Using auto-values
+
+This will use values matching the valueMap passed in, in this example from 0 to 2, with initial value of 0 (override using defaultValue).
+
+      {
+        xtype: 'sliderfieldtext',
+        name: 'slider_decimal',
+        labelText: 'Decimal',
+        label: 'Decimal',
+        autoValues: true,
+        valueMap: ['Any', 'Apartment', 'House']
+      }
+
 
 # Screenshots
 

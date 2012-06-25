@@ -34,6 +34,15 @@ Ext.define('Ext.field.SliderInput', {
       config.value = config.values;
     }
 
+    if (config.hasOwnProperty('valueMap')) {
+      if (config.autoValues == true) {
+        config.value = config.defaultValue || 0;
+        config.minValue = 0;
+        config.maxValue = config.valueMap.size -1;
+        config.increment = 1;
+      }
+    }
+
     this.callParent([config]);
   },
   
