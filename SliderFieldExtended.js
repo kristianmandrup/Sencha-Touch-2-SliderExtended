@@ -64,7 +64,8 @@ Ext.define('Ext.field.SliderExtended', {
   },
   
   setHelperValue: function(value) {
-    var value = value;
+    var valueMapper = self.config.valueMapper;
+    var value = valueMapper ? valueMapper(value) : value;
     this.helperInput.dom.value = value;
   },
   

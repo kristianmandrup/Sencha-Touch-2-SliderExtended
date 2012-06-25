@@ -20,7 +20,25 @@ This is an extended version of the Sencha Touch 2 Slider field with added helper
         minValue: 0,
         maxValue: 100,
         increment: 0.25
-      },
+      }
+
+## Using a custom valueMapper
+
+      {
+        xtype: 'sliderfieldextended',
+        name: 'slider_decimal',
+        labelText: 'Decimal',
+        label: 'Decimal',
+        value: 0,
+        minValue: 0,
+        maxValue: 2,
+        increment: 1,
+        valueMapper: function(value) {
+          self.config.valueMap[value];
+        }
+        valueMap: ['A', 'B', 'C']
+      }
+
 
 # Screenshots
 
