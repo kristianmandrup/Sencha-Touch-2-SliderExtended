@@ -10,7 +10,14 @@ Ext.define('Ext.field.SliderInput', {
   config: {
     cls: Ext.baseCSSPrefix + 'slider-field-input',
     tabIndex: -1,
-    helperPosition: 'right'
+    helperPosition: 'right',
+    valueMapper: function(value) {
+      if (self.config.valueMap) {
+        self.config.valueMap[value];
+      } else {
+        value;
+      }
+    }    
   },
 
   proxyConfig: {

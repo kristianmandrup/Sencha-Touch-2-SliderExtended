@@ -9,7 +9,14 @@ Ext.define('Ext.field.SliderText', {
   config: {
     cls: Ext.baseCSSPrefix + 'slider-field-text',
     tabIndex: -1,
-    helperPosition: 'right'
+    helperPosition: 'right',
+    valueMapper: function(value) {
+      if (self.config.valueMap) {
+        self.config.valueMap[value];
+      } else {
+        value;
+      }
+    }
   },
 
   proxyConfig: {
